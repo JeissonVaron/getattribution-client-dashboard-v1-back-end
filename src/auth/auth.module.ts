@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { UsersModule } from '../users/users.module';
+import { UsersService } from 'src/users/users.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtConstants } from './constants';
@@ -16,6 +17,6 @@ import { jwtConstants } from './constants';
     }),
   ],
   exports: [AuthService],
-  providers: [AuthService]
+  providers: [AuthService,UsersService]
 })
 export class AuthModule {}
